@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function GetAllStarships() {
-  const [data, setData] = useState("");
+  const [data, setData] = useState(null);
 
   const getData = async () => {
     let response = await axios.get("https://swapi.dev/api/starships/");
@@ -16,9 +16,17 @@ function GetAllStarships() {
 
   return (
     <>
-      data
+    {data && data.results ? (
+    <>
+      {data.results.map((ship, index) => (
+        <div key={index}>{ship.name}</div>
+      ))}
     </>
-  )
+    ) : (
+      <p>I dislike react...</p>  
+    )}
+    </>
+  );
 }
 
 export { GetAllStarships }
