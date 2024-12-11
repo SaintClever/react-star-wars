@@ -1,7 +1,7 @@
 function Header() {
   return(
     <nav className="header">
-      <h1>Star Wars Starship</h1>
+      <p>Star Wars Starship</p>
     </nav>
   )
 }
