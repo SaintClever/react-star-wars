@@ -17,11 +17,11 @@ function GetAllStarships() {
   return (
     <>
     {data && data.results ? (
-    <>
+    <div className="ships">
       {data.results.map((ship, index) => (
         <div key={index}>{ship.name}</div>
       ))}
-    </>
+    </div>
     ) : (
       <p>I dislike react...</p>  
     )}
